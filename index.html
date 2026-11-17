@@ -470,11 +470,11 @@ footer{border-top:1px solid var(--line);padding:34px 0 120px;color:var(--mut);fo
     <div class="loc-card glass reveal">
       <span class="eyebrow">Contacto</span>
       <h2>Visítanos o escríbenos</h2>
-      <div class="li"><span>📍</span><div><b>Montenegro, Quindío</b><small>Pregúntanos por WhatsApp cómo llegar</small></div></div>
+      <div class="li"><span>📍</span><div><b>Montenegro, Quindío</b><small>Toca "Cómo llegar" para abrir Google Maps</small></div></div>
       <div class="li"><span>💬</span><div><b>WhatsApp 322 768 6010</b><small>Precios, disponibilidad y pedidos</small></div></div>
       <div class="ctas">
         <a class="btn btn-wa wa-link" data-msg="Hola Mobile Shop Montenegro" href="#"><svg class="ico"><use href="#wa"/></svg>Escríbenos</a>
-        <a class="btn btn-glass wa-link" data-msg="Hola Mobile Shop Montenegro, ¿me envían la ubicación del local?" href="#">📍 Pedir ubicación</a>
+        <a class="btn btn-main" href="https://www.google.com/maps/search/?api=1&query=Mobile+Shop+Montenegro+Quind%C3%ADo" target="_blank" rel="noopener">📍 Cómo llegar (Google Maps)</a>
       </div>
     </div>
     <img class="loc-img reveal" src="img/s26ultra.jpg" alt="Samsung Galaxy S26 Ultra" loading="lazy">
@@ -710,7 +710,7 @@ async function accesorios(){await say('🎧 Tenemos la cabina karaoke <b>Gedi G-
 async function askWA(t){await say('¡Claro! Te paso con un asesor para precio y disponibilidad 👇');chips([toWA(null,t),back])}
 async function catalogo(){await say('Te llevo al catálogo: agrega lo que quieras y envía tu pedido por WhatsApp 🛒');chips([['🛒 Abrir catálogo',()=>{bot.classList.remove('open');document.getElementById('catalogo').scrollIntoView({behavior:'smooth'})},true],back])}
 async function pagos(){await say('💳 Para conocer las formas de pago disponibles y opciones para tu compra, escríbele a un asesor:');chips([toWA('💬 Preguntar formas de pago','Hola Mobile Shop Montenegro, ¿qué formas de pago tienen?'),back])}
-async function ubicacion(){await say('📍 Estamos en <b>Montenegro, Quindío</b>. Pídenos la ubicación exacta y el horario por WhatsApp:');chips([toWA('📍 Pedir ubicación y horario','Hola Mobile Shop Montenegro, ¿me envían la ubicación y el horario?'),back])}
+async function ubicacion(){await say('📍 Estamos en <b>Montenegro, Quindío</b>. Toca el botón para ver cómo llegar en Google Maps:');chips([['🗺️ Abrir en Google Maps',()=>{const a=document.createElement('a');a.href='https://www.google.com/maps/search/?api=1&query=Mobile+Shop+Montenegro+Quind%C3%ADo';a.target='_blank';a.rel='noopener';document.body.appendChild(a);a.click();a.remove();chips([back])},true],toWA('🕒 Preguntar horario','Hola Mobile Shop Montenegro, ¿cuál es su horario?'),back])}
 async function asesor(){await say('¡Claro! Te comunico con un asesor 👇');chips([toWA(null,'Hola Mobile Shop Montenegro, quiero hablar con un asesor'),back])}
 const rules=[[/iphone|apple|samsung|galaxy|redmi|xiaomi|infinix|celular|tel[eé]fono|s26|s25|a07|a57|a37|note|hot|honor|zte/i,celular],[/cargador|cable|aud[ií]fono|parlante|cabina|karaoke|gedi|dron|adaptador|tablet|lenovo|accesorio|bose|alexa|echo|reloj|watch|power|aro|c[aá]mara|tv|televisor|proyector|jbl|playstation|control/i,accesorios],[/pag|nequi|tarjeta|cr[eé]dito|cuota|transfer/i,pagos],[/d[oó]nde|direcci|ubica|llegar|horario|abren/i,ubicacion],[/asesor|humano|persona|whats/i,asesor],[/cat[aá]logo|productos/i,catalogo],[/precio|cu[aá]nto|vale/i,accesorios],[/hola|buen(as|os)/i,menu]];
 document.getElementById('botForm').addEventListener('submit',e=>{e.preventDefault();const i=document.getElementById('botTxt');const t=i.value.trim();if(!t)return;i.value='';me(t);body.querySelectorAll('.chips').forEach(c=>c.remove());
