@@ -401,7 +401,7 @@ footer{border-top:1px solid var(--line);padding:34px 0 120px;color:var(--mut);fo
         <a class="btn btn-glass wa-link" data-msg="Hola Mobile Shop Montenegro, quiero cotizar un celular" href="#">Cotizar por WhatsApp</a>
       </div>
       <div class="stats">
-        <div><b>+15</b><span>productos destacados</span></div>
+        <div><b>+30</b><span>productos en catálogo</span></div>
         <div><b>5</b><span>marcas top</span></div>
         <div><b>⚡</b><span>respuesta inmediata</span></div>
       </div>
@@ -415,7 +415,7 @@ footer{border-top:1px solid var(--line);padding:34px 0 120px;color:var(--mut);fo
       <div class="show-dots" id="showDots"></div>
     </div>
   </div>
-  <div class="brands"><div class="brands-in"><span>Apple</span><span>Samsung</span><span>Xiaomi</span><span>Redmi</span><span>Lenovo</span><span>Plus</span><span>Fly</span><span>Gedi</span><span>Apple</span><span>Samsung</span><span>Xiaomi</span><span>Redmi</span><span>Lenovo</span><span>Plus</span><span>Fly</span><span>Gedi</span></div></div>
+  <div class="brands"><div class="brands-in"><span>Apple</span><span>Samsung</span><span>Xiaomi</span><span>Redmi</span><span>Lenovo</span><span>Plus</span><span>Fly</span><span>Gedi</span><span>Bose</span><span>Alexa</span><span>Apple</span><span>Samsung</span><span>Xiaomi</span><span>Redmi</span><span>Lenovo</span><span>Plus</span><span>Fly</span><span>Gedi</span></div></div>
 </section>
 
 <section id="categorias" class="sec">
@@ -429,7 +429,7 @@ footer{border-top:1px solid var(--line);padding:34px 0 120px;color:var(--mut);fo
       <a href="#catalogo" data-cat="Audio" class="bx bx-tech reveal catlink"><span class="bx-ic">🎤</span><h3>Audio y fiesta</h3><p>Cabina karaoke Gedi con pantalla y audífonos para todos los presupuestos.</p><span class="arrow">Ver audio →</span></a>
       <a href="#catalogo" data-cat="Cargadores y cables" class="bx bx-vz reveal catlink"><span class="bx-ic">⚡</span><h3>Cargadores y cables</h3><p>Carga rápida Fly y Plus.</p><span class="arrow">Ver →</span></a>
       <a href="#catalogo" data-cat="Tablets y gadgets" class="bx bx-subs reveal catlink"><span class="bx-ic">🛸</span><h3>Tablets y gadgets</h3><p>Lenovo Tab y dron E88 Pro.</p><span class="arrow">Ver →</span></a>
-      <a href="#catalogo" data-cat="Accesorios" class="bx bx-rec reveal catlink"><span class="bx-ic">🔌</span><h3>Accesorios</h3><p>Adaptadores internacionales y más para tu día a día.</p></a>
+      <a href="#catalogo" data-cat="Smart y hogar" class="bx bx-rec reveal catlink"><span class="bx-ic">⌚</span><h3>Smart y hogar</h3><p>Galaxy Watch Ultra, Echo Spot y Echo Dot con Alexa.</p></a>
       <div class="bx bx-bank reveal"><span class="bx-ic">💬</span><h3>¿No ves lo que buscas?</h3><p>Escríbenos: seguramente lo tenemos o te lo conseguimos.</p></div>
     </div>
   </div>
@@ -532,6 +532,23 @@ const PRODUCTS=[
  {id:'a07',n:'Samsung Galaxy A07 64GB',c:'Celulares',img:'img/a07.jpg',d:'Potencia para tu día.',s:['Pantalla 6.7" 90Hz','Cámara 50MP','5000mAh · carga 25W','IP54 · Helio G99'],t:['Económico']},
  {id:'note15',n:'Redmi Note 15 Pro+',c:'Celulares',img:'img/redminote15.jpg',d:'Diseño premium en negro, azul y café.',s:['Cámara 200MP','6500mAh · carga 100W','IP68','3 colores'],t:['Nuevo'],hero:1},
  {id:'r15c',n:'Redmi 15C',c:'Celulares',img:'img/redmi15c.jpg',d:'Gran batería y gran pantalla.',s:['Pantalla 6.9" 120Hz','6000mAh','Carga rápida 33W'],t:['Económico']},
+ {id:'a7pro',n:'Redmi A7 Pro',c:'Celulares',img:'img/redmi-a7pro.jpg',d:'¡Nuevo! Gran pantalla y batería para todo el día.',s:['Pantalla 6.9"','Batería 6000mAh','128GB'],t:['Nuevo']},
+ {id:'watch',n:'Samsung Galaxy Watch Ultra',c:'Smart y hogar',img:'img/watch-ultra.jpg',d:'Diseñado para superar tus límites.',s:['Super AMOLED 1.5" · cristal de zafiro','Caja de titanio · 10ATM · MIL-STD-810H','Hasta 100 h de batería · GPS doble frecuencia','Titanium Silver y Gray'],t:['Top'],hero:1},
+ {id:'spot',n:'Echo Spot con Alexa',c:'Smart y hogar',img:'img/echo-spot.jpg',d:'Despertador inteligente con pantalla.',s:['Hora, clima y música','Blanco y negro'],t:['Nuevo']},
+ {id:'dot',n:'Echo Dot con Alexa',c:'Smart y hogar',img:'img/echo-dot.jpg',d:'Parlante inteligente controlado con tu voz.',s:['Varios colores','Música, alarmas y más'],t:[]},
+ {id:'bose',n:'Parlantes Bose',c:'Audio',img:'img/bose.jpg',d:'Sonido que te mueve.',s:['Pregunta por modelos y precio'],t:['Top']},
+ {id:'airplus',n:'Audífonos Plus AirPlus 4 · 3 Pro · 3 · Pro',c:'Audio',img:'img/airplus.jpg',d:'Más potencia, más estilo.',s:['Bluetooth · control táctil','Modelos con cancelación de ruido','Carga magnética'],t:['Nuevo']},
+ {id:'pl23',n:'Manos libres Plus PL-23',c:'Audio',img:'img/plus-pl23.jpg',d:'Sonido Hi-Fi con micrófono.',s:['3.5mm','Micrófono integrado'],t:['Económico']},
+ {id:'k3',n:'Dron K3 & E99 Pro',c:'Tablets y gadgets',img:'img/dron-k3.jpg',d:'Explora nuevos ángulos.',s:['Doble cámara 4K','Giro 360°','Gris y naranja'],t:['Nuevo']},
+ {id:'aro',n:'Aro de luz RGB 36 cm',c:'Tablets y gadgets',img:'img/aro-luz.jpg',d:'Ilumina tu contenido.',s:['RGB · 20 modos de luz','Trípode y soporte para celular','USB'],t:[]},
+ {id:'camimp',n:'Cámara impresora para niños',c:'Tablets y gadgets',img:'img/camara-impresora.jpg',d:'Crea, imprime y guarda tus momentos. ¡Regalo perfecto!',s:['Impresión térmica sin tinta','Fotos, video y pantalla HD','Batería recargable'],t:['Top']},
+ {id:'power',n:'Power banks Fly 25.000 y 35.000 mAh',c:'Cargadores y cables',img:'img/powerbank.jpg',d:'Energía para todo el día, incluye modelo magnético.',s:['A-230 solar · A-260 · 35.000mAh 22.5W','A-250 magnético inalámbrico'],t:['Top']},
+ {id:'c530',n:'Cargador Fly C-530 25W',c:'Cargadores y cables',img:'img/fly-c530.jpg',d:'Doble puerto, máxima potencia.',s:['25W · PD + QC','USB y tipo C'],t:[]},
+ {id:'p110',n:'Cargador para carro Fly P-110 55W',c:'Cargadores y cables',img:'img/fly-p110.jpg',d:'La velocidad que tu día necesita.',s:['55W','Tipo C PD30W + USB'],t:['Nuevo']},
+ {id:'c310',n:'Cargador Fly Energy C-310 12W',c:'Cargadores y cables',img:'img/fly-c310.jpg',d:'Con cable tipo C a tipo C incluido.',s:['12W · Smart chip'],t:[]},
+ {id:'c270',n:'Cargadores Fly C-270C / C-450',c:'Cargadores y cables',img:'img/fly-c270.jpg',d:'Carga rápida en casa o donde estés.',s:['C-270C 3.0A tipo C','C-450 2.4A micro'],t:[]},
+ {id:'cables',n:'Cables Fly K-580C · K-3700C · K-200C · K-180C',c:'Cargadores y cables',img:'img/fly-cables.jpg',d:'Alta calidad y máximo rendimiento.',s:['Hasta 6A','Tipo C'],t:[]},
+ {id:'k490',n:'Cable Fly K-490C tipo C 5A',c:'Cargadores y cables',img:'img/fly-k490.jpg',d:'Carga rápida y transferencia de datos.',s:['5A · 1 metro'],t:[]},
  {id:'lenovo',n:'Lenovo Tab One + Folio Case',c:'Tablets y gadgets',img:'img/lenovo.jpg',d:'Ideal para estudio y entretenimiento, con estuche incluido.',s:['Incluye Folio Case'],t:[]},
  {id:'e88',n:'Dron E88 Pro plegable',c:'Tablets y gadgets',img:'img/dron-e88.jpg',d:'Vuela más alto, captura más lejos.',s:['Cámara HD · Wi‑Fi','Función hover · flips 360°','Incluye control, batería y hélices'],t:['Top'],hero:1},
  {id:'gedi',n:'Cabina Gedi G-1419 Karaoke Cinema',c:'Audio',img:'img/gedi.jpg',d:'Tu fiesta, tu música, tu momento.',s:['Pantalla LED 15.4"','2 micrófonos inalámbricos y control','Luces RGB · Bluetooth · USB · TF','Batería recargable'],t:['Top'],hero:1},
@@ -634,13 +651,13 @@ async function celular(){await say('Tenemos <b>iPhone 17 Pro Max</b>, <b>Galaxy 
  chips([...['iPhone','Samsung','Xiaomi / Redmi','Otra marca'].map(m=>[m,()=>presupuesto(m)]),back])}
 async function presupuesto(m){await say('¡Buena elección! ¿Qué es lo más importante para ti?');chips(['Buena cámara','Batería que dure','Buen precio','Lo más nuevo'].map(p=>[p,()=>nombre(m,p)]))}
 async function nombre(m,p){await say('Perfecto 👌 ¿Cuál es tu nombre? Escríbelo abajo ✍️');awaiting=async n=>{await say(`Gracias, <b>${esc(n)}</b>. Te paso con un asesor con tu solicitud lista:`);chips([toWA('✅ Enviar por WhatsApp',`Hola Mobile Shop Montenegro 👋 Soy ${n}.\nBusco un celular:\n• Marca: ${m}\n• Lo más importante: ${p}\n¿Qué opciones y precios tienen?`),back])}}
-async function accesorios(){await say('🎧 Tenemos la cabina karaoke <b>Gedi G-1419</b>, audífonos Fly, cargadores Fly y Plus, cables, adaptadores internacionales y el dron <b>E88 Pro</b>.');await say('¿Qué estás buscando? Escríbelo o elige:');chips([...['Cargador','Cable','Audífonos','Cabina / parlante','Dron'].map(x=>[x,()=>askWA('Hola Mobile Shop Montenegro, quiero precio de: '+x)]),back]);awaiting=t=>askWA('Hola Mobile Shop Montenegro, quiero precio de: '+t)}
+async function accesorios(){await say('🎧 Tenemos la cabina karaoke <b>Gedi G-1419</b>, parlantes <b>Bose</b>, audífonos AirPlus y Fly, power banks, Galaxy Watch Ultra, Echo con Alexa, cargadores Fly y Plus, cables, adaptadores internacionales y el dron <b>E88 Pro</b>.');await say('¿Qué estás buscando? Escríbelo o elige:');chips([...['Cargador','Cable','Audífonos','Cabina / parlante','Dron'].map(x=>[x,()=>askWA('Hola Mobile Shop Montenegro, quiero precio de: '+x)]),back]);awaiting=t=>askWA('Hola Mobile Shop Montenegro, quiero precio de: '+t)}
 async function askWA(t){await say('¡Claro! Te paso con un asesor para precio y disponibilidad 👇');chips([toWA(null,t),back])}
 async function catalogo(){await say('Te llevo al catálogo: agrega lo que quieras y envía tu pedido por WhatsApp 🛒');chips([['🛒 Abrir catálogo',()=>{bot.classList.remove('open');document.getElementById('catalogo').scrollIntoView({behavior:'smooth'})},true],back])}
 async function pagos(){await say('💳 Para conocer las formas de pago disponibles y opciones para tu compra, escríbele a un asesor:');chips([toWA('💬 Preguntar formas de pago','Hola Mobile Shop Montenegro, ¿qué formas de pago tienen?'),back])}
 async function ubicacion(){await say('📍 Estamos en <b>Montenegro, Quindío</b>. Pídenos la ubicación exacta y el horario por WhatsApp:');chips([toWA('📍 Pedir ubicación y horario','Hola Mobile Shop Montenegro, ¿me envían la ubicación y el horario?'),back])}
 async function asesor(){await say('¡Claro! Te comunico con un asesor 👇');chips([toWA(null,'Hola Mobile Shop Montenegro, quiero hablar con un asesor'),back])}
-const rules=[[/iphone|apple|samsung|galaxy|redmi|xiaomi|celular|tel[eé]fono|s26|s25|a07|note/i,celular],[/cargador|cable|aud[ií]fono|parlante|cabina|karaoke|gedi|dron|adaptador|tablet|lenovo|accesorio/i,accesorios],[/pag|nequi|tarjeta|cr[eé]dito|cuota|transfer/i,pagos],[/d[oó]nde|direcci|ubica|llegar|horario|abren/i,ubicacion],[/asesor|humano|persona|whats/i,asesor],[/cat[aá]logo|productos/i,catalogo],[/precio|cu[aá]nto|vale/i,accesorios],[/hola|buen(as|os)/i,menu]];
+const rules=[[/iphone|apple|samsung|galaxy|redmi|xiaomi|celular|tel[eé]fono|s26|s25|a07|note/i,celular],[/cargador|cable|aud[ií]fono|parlante|cabina|karaoke|gedi|dron|adaptador|tablet|lenovo|accesorio|bose|alexa|echo|reloj|watch|power|aro|c[aá]mara/i,accesorios],[/pag|nequi|tarjeta|cr[eé]dito|cuota|transfer/i,pagos],[/d[oó]nde|direcci|ubica|llegar|horario|abren/i,ubicacion],[/asesor|humano|persona|whats/i,asesor],[/cat[aá]logo|productos/i,catalogo],[/precio|cu[aá]nto|vale/i,accesorios],[/hola|buen(as|os)/i,menu]];
 document.getElementById('botForm').addEventListener('submit',e=>{e.preventDefault();const i=document.getElementById('botTxt');const t=i.value.trim();if(!t)return;i.value='';me(t);body.querySelectorAll('.chips').forEach(c=>c.remove());
  if(awaiting){const f=awaiting;awaiting=null;f(t);return}const r=rules.find(([re])=>re.test(t));
  if(r)r[1]();else say('No estoy seguro de haber entendido 🤔 Te paso con un asesor o elige una opción.').then(()=>chips([toWA('💬 Preguntarle a un asesor','Hola Mobile Shop Montenegro, tengo una pregunta: '+t),back]))});
