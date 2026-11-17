@@ -401,7 +401,7 @@ footer{border-top:1px solid var(--line);padding:34px 0 120px;color:var(--mut);fo
         <a class="btn btn-glass wa-link" data-msg="Hola Mobile Shop Montenegro, quiero cotizar un celular" href="#">Cotizar por WhatsApp</a>
       </div>
       <div class="stats">
-        <div><b>+75</b><span>productos en catálogo</span></div>
+        <div><b>+80</b><span>productos en catálogo</span></div>
         <div><b>5</b><span>marcas top</span></div>
         <div><b>⚡</b><span>respuesta inmediata</span></div>
       </div>
@@ -580,6 +580,13 @@ const PRODUCTS=[
  {id:'p40',n:'Cargador para carro Fly P-40',c:'Cargadores y cables',img:'img/fly-p40.jpg',d:'Doble puerto USB-A + USB-C.',s:['12W · QC3.0 + PD'],t:['Económico']},
  {id:'cp120',n:'Cargador Fly CP-120 15W',c:'Cargadores y cables',img:'img/fly-cp120.jpg',d:'Con cable USB-C incluido.',s:['3.1A · 15W'],t:['Económico']},
  {id:'cp110',n:'Cargadores Fly 3.1A tipo C',c:'Cargadores y cables',img:'img/fly-cp110.jpg',d:'Rápidos, seguros y confiables.',s:['3.1A','Cable tipo C'],t:['Económico']},
+ {id:'ipreal',n:'iPhone Pro Max · foto real',c:'Celulares',img:'img/iphone-promax-real.jpg',d:'Foto real del equipo. Pregunta por modelo, memoria y estado.',s:['Pregunta por modelo y precio'],t:[]},
+ {id:'zte',n:'Celular ZTE',c:'Celulares',img:'img/zte.jpg',d:'Económico, con doble cámara y pantalla amplia.',s:['Color verde agua','Pregunta por memoria y precio'],t:['Económico']},
+ {id:'hw18',n:'Smartwatch Howear HW18 Pro+',c:'Smart y hogar',img:'img/howear-hw18.jpg',d:'Conectado contigo, siempre.',s:['Llamadas Bluetooth','Monitor de salud y modos deportivos','Hasta 7 días de batería · Android / iOS'],t:['Nuevo']},
+ {id:'r36s',n:'Consola portátil R36S 64GB',c:'Tablets y gadgets',img:'img/consola-r36s.jpg',d:'Revive los mejores juegos clásicos donde quieras.',s:['64GB · miles de juegos','Pantalla HD 640×480','Ranura TF'],t:['Top']},
+ {id:'yuegan',n:'Radio retro Yuegan YG-1085 mini',c:'Audio',img:'img/radio-yuegan.jpg',d:'Estilo vintage con luz LED ambiental.',s:['Bluetooth 5.0 · USB · Micro SD','FM / AM / SW','Hasta 6 h de batería'],t:['Nuevo']},
+ {id:'sokany',n:'Parrilla Raclette Sokany SK-08139',c:'Smart y hogar',img:'img/sokany-grill.jpg',d:'El centro de tus reuniones.',s:['1600W','8 sartenes individuales','Antiadherente'],t:['Nuevo']},
+ {id:'vgrbarber',n:'Combo barbero VGR Super Trim V-699 & 971',c:'Smart y hogar',img:'img/vgr-barber.jpg',d:'Potencia, precisión y estilo en cada corte.',s:['Cuchillas de titanio','Pantalla LED · carga USB','Peines guía incluidos'],t:['Top']},
  {id:'a7pro',n:'Redmi A7 Pro',c:'Celulares',img:'img/redmi-a7pro.jpg',d:'¡Nuevo! Gran pantalla y batería para todo el día.',s:['Pantalla 6.9"','Batería 6000mAh','128GB'],t:['Nuevo']},
  {id:'watch',n:'Samsung Galaxy Watch Ultra',c:'Smart y hogar',img:'img/watch-ultra.jpg',d:'Diseñado para superar tus límites.',s:['Super AMOLED 1.5" · cristal de zafiro','Caja de titanio · 10ATM · MIL-STD-810H','Hasta 100 h de batería · GPS doble frecuencia','Titanium Silver y Gray'],t:['Top'],hero:1},
  {id:'spot',n:'Echo Spot con Alexa',c:'Smart y hogar',img:'img/echo-spot.jpg',d:'Despertador inteligente con pantalla.',s:['Hora, clima y música','Blanco y negro'],t:['Nuevo']},
@@ -705,7 +712,7 @@ async function catalogo(){await say('Te llevo al catálogo: agrega lo que quiera
 async function pagos(){await say('💳 Para conocer las formas de pago disponibles y opciones para tu compra, escríbele a un asesor:');chips([toWA('💬 Preguntar formas de pago','Hola Mobile Shop Montenegro, ¿qué formas de pago tienen?'),back])}
 async function ubicacion(){await say('📍 Estamos en <b>Montenegro, Quindío</b>. Pídenos la ubicación exacta y el horario por WhatsApp:');chips([toWA('📍 Pedir ubicación y horario','Hola Mobile Shop Montenegro, ¿me envían la ubicación y el horario?'),back])}
 async function asesor(){await say('¡Claro! Te comunico con un asesor 👇');chips([toWA(null,'Hola Mobile Shop Montenegro, quiero hablar con un asesor'),back])}
-const rules=[[/iphone|apple|samsung|galaxy|redmi|xiaomi|infinix|celular|tel[eé]fono|s26|s25|a07|a57|a37|note|hot|honor/i,celular],[/cargador|cable|aud[ií]fono|parlante|cabina|karaoke|gedi|dron|adaptador|tablet|lenovo|accesorio|bose|alexa|echo|reloj|watch|power|aro|c[aá]mara|tv|televisor|proyector|jbl|playstation|control/i,accesorios],[/pag|nequi|tarjeta|cr[eé]dito|cuota|transfer/i,pagos],[/d[oó]nde|direcci|ubica|llegar|horario|abren/i,ubicacion],[/asesor|humano|persona|whats/i,asesor],[/cat[aá]logo|productos/i,catalogo],[/precio|cu[aá]nto|vale/i,accesorios],[/hola|buen(as|os)/i,menu]];
+const rules=[[/iphone|apple|samsung|galaxy|redmi|xiaomi|infinix|celular|tel[eé]fono|s26|s25|a07|a57|a37|note|hot|honor|zte/i,celular],[/cargador|cable|aud[ií]fono|parlante|cabina|karaoke|gedi|dron|adaptador|tablet|lenovo|accesorio|bose|alexa|echo|reloj|watch|power|aro|c[aá]mara|tv|televisor|proyector|jbl|playstation|control/i,accesorios],[/pag|nequi|tarjeta|cr[eé]dito|cuota|transfer/i,pagos],[/d[oó]nde|direcci|ubica|llegar|horario|abren/i,ubicacion],[/asesor|humano|persona|whats/i,asesor],[/cat[aá]logo|productos/i,catalogo],[/precio|cu[aá]nto|vale/i,accesorios],[/hola|buen(as|os)/i,menu]];
 document.getElementById('botForm').addEventListener('submit',e=>{e.preventDefault();const i=document.getElementById('botTxt');const t=i.value.trim();if(!t)return;i.value='';me(t);body.querySelectorAll('.chips').forEach(c=>c.remove());
  if(awaiting){const f=awaiting;awaiting=null;f(t);return}const r=rules.find(([re])=>re.test(t));
  if(r)r[1]();else say('No estoy seguro de haber entendido 🤔 Te paso con un asesor o elige una opción.').then(()=>chips([toWA('💬 Preguntarle a un asesor','Hola Mobile Shop Montenegro, tengo una pregunta: '+t),back]))});
