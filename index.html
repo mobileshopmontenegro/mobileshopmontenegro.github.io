@@ -318,6 +318,20 @@ footer{border-top:1px solid var(--line);padding:34px 0 120px;color:var(--mut);fo
 .toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,20px);z-index:130;background:#fff;color:#0b1230;padding:.75rem 1.1rem;border-radius:999px;font-weight:800;font-size:.9rem;box-shadow:0 20px 40px -10px rgba(0,0,0,.6);opacity:0;transition:.3s;pointer-events:none}
 .toast.on{opacity:1;transform:translate(-50%,0)}
 
+
+.pays{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.pay{border-radius:22px;padding:24px;border:1px solid var(--line);display:flex;flex-direction:column;gap:.6rem}
+.pay.k{background:linear-gradient(150deg,rgba(255,214,10,.16),var(--card2) 70%)}
+.pay.d{background:linear-gradient(150deg,rgba(239,35,60,.2),var(--card2) 70%)}
+.pay.b{background:linear-gradient(150deg,rgba(47,107,255,.22),var(--card2) 70%)}
+.pay .ic{font-size:1.8rem}
+.pay h3{font-size:1.15rem}
+.pay small{color:var(--mut);font-size:.85rem}
+.num{display:flex;align-items:center;justify-content:space-between;gap:8px;background:#fff;color:#0b1230;border-radius:14px;padding:.75rem .9rem;font-weight:800;font-size:1.15rem;letter-spacing:.02em;margin-top:auto}
+.num button{background:var(--blue);color:#fff;border:0;border-radius:10px;padding:.5rem .8rem;font-weight:800;cursor:pointer;font-family:inherit;white-space:nowrap}
+.pay-note{margin-top:18px;text-align:center;color:var(--mut);font-size:.9rem}
+@media(max-width:900px){.pays{grid-template-columns:1fr}}
+
 /* bot */
 .wa-float{position:fixed;right:18px;bottom:18px;z-index:60;width:62px;height:62px;border-radius:50%;border:0;cursor:pointer;background:var(--wa);display:grid;place-items:center;box-shadow:0 14px 34px -8px rgba(37,211,102,.75)}
 .wa-float::after{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid var(--wa);animation:ring 2.2s infinite}
@@ -380,7 +394,7 @@ footer{border-top:1px solid var(--line);padding:34px 0 120px;color:var(--mut);fo
 <header class="nav-wrap">
   <nav class="nav">
     <a href="#inicio" class="logo" aria-label="Mobile Shop Montenegro"><span class="logo-mark">MS</span><span class="logo-txt">Mobile<b>Shop</b></span></a>
-    <div class="menu" id="menu"><a href="#catalogo">Catálogo</a><a href="#categorias">Categorías</a><a href="#nosotros">Nosotros</a><a href="#contacto">Contacto</a></div>
+    <div class="menu" id="menu"><a href="#catalogo">Catálogo</a><a href="#categorias">Categorías</a><a href="#nosotros">Nosotros</a><a href="#pagos">Pagos</a><a href="#contacto">Contacto</a></div>
     <div class="nav-act">
       <button class="cart-btn" id="cartOpen" aria-label="Ver mi pedido">🛒<span id="cartCount">0</span></button>
       <a class="btn btn-wa sm wa-link" data-msg="Hola Mobile Shop Montenegro, quiero información" href="#"><svg class="ico"><use href="#wa"/></svg><span class="hide-sm">WhatsApp</span></a>
@@ -465,6 +479,18 @@ footer{border-top:1px solid var(--line);padding:34px 0 120px;color:var(--mut);fo
   </div>
 </section>
 
+<section id="pagos" class="sec sec-alt">
+  <div class="wrap">
+    <div class="head reveal"><span class="eyebrow">Medios de pago</span><h2>Paga fácil y seguro</h2><p class="lead">Transfiere desde la app de tu banco y envíanos el comprobante por WhatsApp.</p></div>
+    <div class="pays reveal">
+      <div class="pay k"><span class="ic">🔑</span><h3>Llave Bre-B</h3><small>Transfiere al instante desde cualquier banco.</small><div class="num"><span>3232040997</span><button type="button" data-copy="3232040997">Copiar</button></div></div>
+      <div class="pay d"><span class="ic">📲</span><h3>DaviPlata</h3><small>Envía desde tu app DaviPlata.</small><div class="num"><span>322 768 6010</span><button type="button" data-copy="3227686010">Copiar</button></div></div>
+      <div class="pay b"><span class="ic">🏦</span><h3>Bancolombia</h3><small>Cuenta de ahorros.</small><div class="num"><span>761 000 00631</span><button type="button" data-copy="76100000631">Copiar</button></div></div>
+    </div>
+    <p class="pay-note reveal">¿Ya pagaste? <a class="wa-link" data-msg="Hola Mobile Shop Montenegro, ya realicé el pago. Te envío el comprobante." href="#" style="color:var(--wa);font-weight:800">Envíanos el comprobante por WhatsApp →</a></p>
+  </div>
+</section>
+
 <section id="contacto" class="sec sec-alt">
   <div class="wrap loc">
     <div class="loc-card glass reveal">
@@ -520,6 +546,8 @@ const WA='573227686010';
 const waUrl=m=>'https://wa.me/'+WA+'?text='+encodeURIComponent(m);
 function linkWA(){document.querySelectorAll('.wa-link').forEach(a=>{a.href=waUrl(a.dataset.msg||'Hola Mobile Shop Montenegro');a.target='_blank';a.rel='noopener'})}
 linkWA();
+document.querySelectorAll('[data-copy]').forEach(b=>b.addEventListener('click',async()=>{const t=b.textContent;try{await navigator.clipboard.writeText(b.dataset.copy);b.textContent='¡Copiado!'}catch(e){b.textContent=b.dataset.copy}setTimeout(()=>b.textContent=t,1800)}));
+
 document.getElementById('yr').textContent=new Date().getFullYear();
 const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{threshold:.12});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
@@ -709,10 +737,10 @@ async function nombre(m,p){await say('Perfecto 👌 ¿Cuál es tu nombre? Escrí
 async function accesorios(){await say('🎧 Tenemos la cabina karaoke <b>Gedi G-1419</b>, parlantes <b>Bose</b>, audífonos AirPlus y Fly, power banks, Galaxy Watch Ultra, Echo con Alexa, cargadores Fly y Plus, cables, adaptadores internacionales drones, <b>televisores Corn</b> y <b>proyectores</b>.');await say('¿Qué estás buscando? Escríbelo o elige:');chips([...['Cargador','Cable','Audífonos','Televisor','Proyector','Cabina / parlante'].map(x=>[x,()=>askWA('Hola Mobile Shop Montenegro, quiero precio de: '+x)]),back]);awaiting=t=>askWA('Hola Mobile Shop Montenegro, quiero precio de: '+t)}
 async function askWA(t){await say('¡Claro! Te paso con un asesor para precio y disponibilidad 👇');chips([toWA(null,t),back])}
 async function catalogo(){await say('Te llevo al catálogo: agrega lo que quieras y envía tu pedido por WhatsApp 🛒');chips([['🛒 Abrir catálogo',()=>{bot.classList.remove('open');document.getElementById('catalogo').scrollIntoView({behavior:'smooth'})},true],back])}
-async function pagos(){await say('💳 Para conocer las formas de pago disponibles y opciones para tu compra, escríbele a un asesor:');chips([toWA('💬 Preguntar formas de pago','Hola Mobile Shop Montenegro, ¿qué formas de pago tienen?'),back])}
+async function pagos(){await say('💳 Puedes pagar por:<br>🔑 <b>Llave Bre-B:</b> 3232040997<br>📲 <b>DaviPlata:</b> 322 768 6010<br>🏦 <b>Bancolombia ahorros:</b> 761 000 00631');await say('Cuando pagues, envíanos el comprobante por WhatsApp 👇');chips([toWA('📎 Enviar comprobante','Hola Mobile Shop Montenegro, ya realicé el pago. Te envío el comprobante.'),back])}
 async function ubicacion(){await say('📍 Estamos en <b>Montenegro, Quindío</b>. Toca el botón para ver cómo llegar en Google Maps:');chips([['🗺️ Abrir en Google Maps',()=>{const a=document.createElement('a');a.href='https://www.google.com/maps/search/?api=1&query=Mobile+Shop+Montenegro+Quind%C3%ADo';a.target='_blank';a.rel='noopener';document.body.appendChild(a);a.click();a.remove();chips([back])},true],toWA('🕒 Preguntar horario','Hola Mobile Shop Montenegro, ¿cuál es su horario?'),back])}
 async function asesor(){await say('¡Claro! Te comunico con un asesor 👇');chips([toWA(null,'Hola Mobile Shop Montenegro, quiero hablar con un asesor'),back])}
-const rules=[[/iphone|apple|samsung|galaxy|redmi|xiaomi|infinix|celular|tel[eé]fono|s26|s25|a07|a57|a37|note|hot|honor|zte/i,celular],[/cargador|cable|aud[ií]fono|parlante|cabina|karaoke|gedi|dron|adaptador|tablet|lenovo|accesorio|bose|alexa|echo|reloj|watch|power|aro|c[aá]mara|tv|televisor|proyector|jbl|playstation|control/i,accesorios],[/pag|nequi|tarjeta|cr[eé]dito|cuota|transfer/i,pagos],[/d[oó]nde|direcci|ubica|llegar|horario|abren/i,ubicacion],[/asesor|humano|persona|whats/i,asesor],[/cat[aá]logo|productos/i,catalogo],[/precio|cu[aá]nto|vale/i,accesorios],[/hola|buen(as|os)/i,menu]];
+const rules=[[/iphone|apple|samsung|galaxy|redmi|xiaomi|infinix|celular|tel[eé]fono|s26|s25|a07|a57|a37|note|hot|honor|zte/i,celular],[/cargador|cable|aud[ií]fono|parlante|cabina|karaoke|gedi|dron|adaptador|tablet|lenovo|accesorio|bose|alexa|echo|reloj|watch|power|aro|c[aá]mara|tv|televisor|proyector|jbl|playstation|control/i,accesorios],[/pag|nequi|tarjeta|cr[eé]dito|cuota|transfer|daviplata|bancolombia|llave|cuenta/i,pagos],[/d[oó]nde|direcci|ubica|llegar|horario|abren/i,ubicacion],[/asesor|humano|persona|whats/i,asesor],[/cat[aá]logo|productos/i,catalogo],[/precio|cu[aá]nto|vale/i,accesorios],[/hola|buen(as|os)/i,menu]];
 document.getElementById('botForm').addEventListener('submit',e=>{e.preventDefault();const i=document.getElementById('botTxt');const t=i.value.trim();if(!t)return;i.value='';me(t);body.querySelectorAll('.chips').forEach(c=>c.remove());
  if(awaiting){const f=awaiting;awaiting=null;f(t);return}const r=rules.find(([re])=>re.test(t));
  if(r)r[1]();else say('No estoy seguro de haber entendido 🤔 Te paso con un asesor o elige una opción.').then(()=>chips([toWA('💬 Preguntarle a un asesor','Hola Mobile Shop Montenegro, tengo una pregunta: '+t),back]))});
